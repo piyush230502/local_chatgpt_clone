@@ -117,7 +117,7 @@ else:
             with st.spinner("Thinking..."):
                 api_messages = [{"role": m["role"], "content": m["content"]} for m in current_conv["messages"]]
                 response = client.chat.completions.create(
-                    model=os.environ.get("GROQ_API_KEY"), # Ensure this matches model in LM Studio
+                    model="llama-3.3-70b-versatile", # Ensure this matches model in LM Studio
                     messages=api_messages,
                     temperature=0.7,
                     stream=False, # Streaming can be added for a more dynamic feel
@@ -141,7 +141,7 @@ else:
             with st.spinner("Thinking..."):
                 api_messages = [{"role": m["role"], "content": m["content"]} for m in current_conv["messages"]]
                 response = client.chat.completions.create(
-                    model=os.environ.get("GROQ_API_KEY"),
+                    model="llama-3.3-70b-versatile",
                     messages=api_messages,
                     temperature=0.7,
                 )
